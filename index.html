@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gra w Wisielca</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js"></script>
+    <script src="src/words.js"></script>
+    <script src="src/wisielec.js"></script>
+    <script src="src/sourceDIS.js"></script>
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Gra w Wisielca</h1>
+      <canvas id="hangmanCanvas" width="200" height="200"></canvas>
+      <p id="wordDisplay">_ _ _ _ _</p>
+      <p id="message"></p>
+      <div id="letters">
+        <div id="lettersRow1"></div>
+        <div id="lettersRow2"></div>
+      </div>
+      <input
+        type="text"
+        id="guessInput"
+        placeholder="Zgadnij całe hasło"
+        style="display: none"
+      />
+      <div id="buttonContainer">
+        <button
+          id="guessButton"
+          onclick="guessFullWord()"
+          style="display: none"
+        >
+          Zgadnij hasło
+        </button>
+        <button id="resetButton" onclick="startGame()">
+          Rozpocznij nową grę
+        </button>
+      </div>
+    </div>
+    <div id="fullscreenImageContainer">
+      <img id="fullscreenImage" src="assets/Syren.gif" alt="GIF" />
+    </div>
+    <!--
+    <div id="fullscreenImageContainer">
+      <button id="closeButton" onclick="closeFullscreenImage()">×</button>
+      <img id="fullscreenImage" src="assets/schabowy.jpg" alt="Schabowy" />
+    </div>
+    -->
+    <footer class="site-footer">
+      <p><strong>In alpha development | build 0.0.174</strong></p>
+    </footer>
+  </body>
+</html>

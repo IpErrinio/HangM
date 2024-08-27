@@ -1,0 +1,17 @@
+const words = [
+  "programowanie",
+  "javascript",
+  "komputer",
+  "technologia",
+  "aplikacja",
+  "internet",
+  "dupa",
+  "python",
+  "algorytm",
+  "oprogramowanie",
+  "grafika",
+  "kodowanie",
+  "serwer",
+  "yunnah",
+  "frontend",
+];
