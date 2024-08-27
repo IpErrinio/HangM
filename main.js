@@ -64,7 +64,6 @@ function guessLetter(letter) {
     drawHangman(attempts);
   }
 
-  //Do wyjebania
   if (displayedWord.indexOf("_") === -1) {
     const messageElement = document.getElementById("message");
     messageElement.textContent = "Gratulacje! Wygrałeś!";
@@ -87,12 +86,12 @@ function guessLetter(letter) {
 function guessFullWord() {
   const guessedWord = document.getElementById("guessInput").value.toLowerCase();
 
-  /* if (guessedWord === "schabowy") {
+  /*
+  if (guessedWord === "schabowy") {
     showFullscreenImage();
     return;
-  }*/
-
-  //Albo to
+  }
+*/
   if (guessedWord === selectedWord) {
     const messageElement = document.getElementById("message");
     messageElement.textContent = "Gratulacje! Wygrałeś!";
@@ -101,8 +100,9 @@ function guessFullWord() {
     document.getElementById("wordDisplay").textContent = displayedWord;
     endGame();
   } else {
-    attempts++;
-    drawHangman(attempts);
+    if (attempts < maxAttempts) {
+      attempts++;
+    }
     if (attempts === maxAttempts) {
       const messageElement = document.getElementById("message");
       messageElement.textContent = `Przegrałeś! Słowo to: ${selectedWord}`;
@@ -126,9 +126,7 @@ function clearCanvas() {
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
-
 /*
-//Nie pytaj
 function showFullscreenImage() {
   const fullscreenImageContainer = document.getElementById(
     "fullscreenImageContainer"
@@ -136,7 +134,6 @@ function showFullscreenImage() {
   fullscreenImageContainer.style.display = "flex";
 }
 
-//O to też
 function closeFullscreenImage() {
   const fullscreenImageContainer = document.getElementById(
     "fullscreenImageContainer"
@@ -144,5 +141,4 @@ function closeFullscreenImage() {
   fullscreenImageContainer.style.display = "none";
 }
 */
-
 window.onload = startGame;
